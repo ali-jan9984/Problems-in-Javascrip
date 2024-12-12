@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Push and Pop using Stack</title>
+    <script>
+        let data = [];
+        let currentSize = data.length;
+        let max = 5;
+        function push(){
+            let newEl = document.getElementById("newEl").value;
+            if(currentSize >= max){
+                alert("Stack is full");
+            }else{
+                data[currentSize] = newEl;
+                currentSize++;
+            document.getElementById("newEl").value = "";
+            console.warn("element added")
+            }
+        }
+
+        function pop(){
+            if(currentSize > 0){
+                currentSize--;
+                data.length = currentSize;
+            }else{
+                alert("Stack is already empty");
+            }
+        }
+
+        function display(){
+            let i =0;
+            for(i=0;i<currentSize-1;i++){
+                console.error("Stack elements number",i," is ",data[i]);
+            }
+        }
+    </script>
+</head>
+<body>   
+    <h1>Stack in JavaScript</h1>
+    <input type="text" placeholder="enter stack element" id="newEl">
+    <button onclick="push()">Add element to Stack</button>
+    <button onclick="pop()">Remove element to Stack</button>
+    <button onclick="display()">Display all element of Stack</button> 
+</body>
+</html>

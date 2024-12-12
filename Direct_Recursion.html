@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Direct Recursion Data Structures</title>
+    <script>
+        // function factorial(item) {
+        //     // Base case
+        //     if (item === 0 || item === 1) {
+        //         return 1;
+        //     }
+        //     // Recursive case
+        //     return item * factorial(item - 1);
+        // }
+
+        // function calculateFactorial() {
+        //     // Get input value
+        //     let data = document.getElementById("input").value;
+        //     data = parseInt(data);
+
+        //     if (isNaN(data) || data < 0) {
+        //         alert("Please enter a valid non-negative integer!");
+        //         return;
+        //     }
+
+        //     let result = factorial(data);
+        //     alert("The factorial of " + data + " is: " + result);
+        // }
+
+        function factorial(item){
+            if(item === 0 || item === 1){
+                return 1;
+            }
+            return item * factorial(item -1);
+        }
+        function calculateFactorial(){
+            let data = document.getElementById("input").value;
+            data = parseInt(data);
+            if(isNaN(data)|| data < 0){
+                alert("PLease enter a valid non-negative integer!");
+                return;
+            }
+            let result = factorial(data);
+            alert("The factorial of "+data+"is :"+result);
+        }
+    </script>
+</head>
+<body>
+    <input type="number" placeholder="Enter a number to check the factorial" id="input">
+    <button type="button" onclick="calculateFactorial()" id="button">Check</button>
+</body>
+</html>

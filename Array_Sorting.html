@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sortin in Array</title>
+    <script>
+        // let data =[40,30,12,25];
+        // for(let i=0;i<data.length;i++){
+        //     // console.warn(data[i]);
+        //     for(let j=0;j<data.length;j++){
+        //         // console.warn(data[j]) 4times array elements
+        //         if(data[j]>data[j+1]){
+        //             let temp = data[j];//40
+        //             data[j] = data [j+1];//40=30
+        //             data[j+1] = temp;
+        //         }
+        //         // console.warn(data[j]);
+        //     }
+        // }
+        // console.warn(data);
+
+
+        let data = [20,35,67,45,78,90];
+        for(let i=0;i<data.length;i++){
+            for(let j=0;j<data.length;j++){
+               if(data[j]>data[j+1]){
+                let item = data[j];
+                data[j] = data[j+1];
+                data[j+1] = item;
+               }
+            }
+        }
+        console.error(data);
+    </script>
+</head>
+<body>
+</body>
+</html>

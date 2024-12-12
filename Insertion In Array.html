@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Insertion In Array</title>
+    <script>
+        let data = [30,40,34,56,64,67,90];
+        let newElement = 50;
+        let position = 3;
+        for (let i = data.length -1; i >=0; i--){
+            if(i >= position){
+                data[i+1] = data[i];
+            }
+            if(i == position){
+                data[i] = newElement;
+            }
+        }
+        function InsertElement(){
+            let data = [30,35,45,67,1000];
+            console.log(data);
+            let newElement = document.getElementById("positionEl").value;
+            let position = document.getElementById("position").value;
+            for (let index = data.length -1; index >=0; index--){
+                if(index >=position)
+            {
+                data[index+1] = data[index];
+            }
+            if(index ==position)
+            {
+                data[index] = newElement;
+            }
+            }
+            console.log(data);
+        }
+
+        let items = [23,34,54];
+        console.warn(items)
+        items.splice(1,0,100);
+        console.warn(items);
+    </script>
+    <style>
+        input{
+            margin:10px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" name="text" id="position" placeholder="enter the position of the element">
+    <br>
+    <input type="text" name="text" id="positionEl" placeholder="enter the value of the element">
+    <br>
+    <button onclick="InsertElement()">Insert newElement</button>
+</body>
+</html>

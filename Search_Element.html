@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Search Element in Array</title>
+    <script>
+        // let data = [20,40,60,5,10,70,80,90];
+        // let item = 70;
+        // let index = undefined;
+        // for(let i = 0;i<data.length-1;i++){
+        //     if(data[i] === item){
+        //         index = `it exists in the data index is ${i}`;
+        //         break;
+        //     }
+        // }
+        function searchElement(){
+            let data = [34,23,45,67,87,98,67,90];
+            let item = document.getElementById("item").value;
+            item = parseInt(item);
+            let itemIndex = undefined;
+            for(let index= 0;index<data.length-1;index++){
+                if(data[index] === item){
+                    itemIndex = index;
+                    alert(`Successfully search you element in Array. Element index is ${itemIndex}`);
+                }
+            }
+        }
+        //searching element in array using byDefault method 
+        const data = [1,2,3,4,5,6,7,8,9];
+        const item = 4;
+        const index = data.indexOf(item);
+        console.warn(index);
+    </script>
+</head>
+<body>
+    <input type="number" name="text" id="item" placeholder="enter the Element value">
+    <button onclick="searchElement()">Search</button>
+</body>
+</html>

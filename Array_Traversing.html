@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Array_Traversing</title>
+    <script>
+        let data = [34,24,23,23,25,67,89,90,109,150,60];
+        // for (let i = 0; i<data.length;i++){
+        //     document.write(`Array${i} is ${data[i]} <br>`);
+        // }
+        //this is an example of array traversing
+        let x = 3;
+        // document.write(`Element${x} is ${data[x]}`);
+        // this is an example of array accessing 
+        function getAlert(){
+            const value =document.getElementById("input").value;
+            if (value <= data.length && typeof parseInt(value) === "number" && value >= 0){
+                alert(data[value]);
+            }else{
+                alert("Invalid Input");
+            }
+       
+
+        }
+            </script>
+</head>
+<body>
+    <input type="text" name="text" id="input">
+    <button onclick="getAlert()">Get Alert</button>
+</body>
+</html>
