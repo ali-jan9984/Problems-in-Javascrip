@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Reverse String with Class in javascript</title>
+    <script>
+     class Stack {
+    constructor() {
+        this.item = [];
+        this.currentSize = 0;
+    }
+
+    push(newVal) {
+        this.item[this.currentSize] = newVal;
+        this.currentSize++;
+    }
+
+    pop() {
+        if (this.currentSize === 0) {
+            throw new Error("Stack is empty");
+        }else{
+        const lastRemoveItem = this.item[this.currentSize - 1];
+        this.currentSize--;
+        this.item.length = this.currentSize;
+        return lastRemoveItem;
+        }
+    }
+
+    reverseStr() {
+        const tempStack = new Stack();
+
+
+        for (let i = 0; i < this.item.length; i++) {
+            tempStack.push(this.item[i]);
+        }
+
+        // Pop from temp stack to reverse
+        for (let i = 0; i < this.item.length; i++) {
+            this.item[i] = tempStack.pop();
+        }
+    }
+}
+
+// Usage
+let str = "kaka";
+str = str.split("");
+
+const st1 = new Stack();
+for (let char of str) {
+    st1.push(char);
+}
+
+st1.reverseStr();
+
+console.log(st1.item.join(""));
+    </script>
+</head>
+<body>
+</body>
+</html>
