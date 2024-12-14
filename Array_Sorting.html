@@ -20,8 +20,10 @@
 
 
         let data = [20,35,67,45,78,90];
-        for(let i=0;i<data.length;i++){
-            for(let j=0;j<data.length;j++){
+        for(let i = 0;i < data.length;i++){//outer loop 
+            for(let j = 0;j < data.length;j++){//inner loop
+                // console.log(`${i} * ${j} = `, i*j);
+                console.info(data[j]);
                if(data[j]>data[j+1]){
                 let item = data[j];
                 data[j] = data[j+1];
@@ -29,7 +31,7 @@
                }
             }
         }
-        console.error(data);
+        console.table(data);
     </script>
 </head>
 <body>
