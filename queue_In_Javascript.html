@@ -6,28 +6,65 @@
         let queue = [];
         let currentSize = queue.length;
         let maxSize = 5;
-
-        function enqueue(newVal){
+        
+        function enqueueWithBtn(){
+            let newVal = document.getElementById("queue").value;
+            newVal = parseInt(newVal);
             if(currentSize >= maxSize){
-                alert("Queue is full");
+                alert("Queue is full")
             }else{
                 queue[currentSize] = newVal;
                 currentSize++;
-            } 
+                document.getElementById("queue").value = "";
+            }
         }
         function dequeue(){
-            for(let i = 0 ;i<queue.length;i++){
+          if(!isEmpty()){
+            for(let i = 0;i<queue.length;i++){
                 queue[i] = queue[i+1];
-                console.log(queue[i]);
             }
+            currentSize--;
+            queue.length = currentSize;
+          }else{
+            alert("Queue is already empty");
+          }
         }
         function display(){
             console.warn(queue);
         }
 
+        function isEmpty(){
+            if(currentSize<=0){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+        function front(){
+            if(!isEmpty()){
+                console.log(queue[0]);
+            }else{
+                alert("Queue is already empty");
+            }
+        }
+
+        function rear(){
+            if(!isEmpty()){
+                console.warn(queue[currentSize -1]);
+            }else{
+                alert("Queue is already empty")
+            }
+        }
     </script>
 </head>
 <body>
-    
+    <h1>Queue in Javascript</h1>
+    <input type="text" name="text" id="queue" placeholder="enter the value of the element">
+    <button onclick="enqueueWithBtn()">addElement</button>
+    <button onclick="dequeue()">removeElement</button>
+    <button onclick="display()">diplay</button>
+    <button onclick="front()">front</button>
+    <button onclick="rear()">rear</button>
 </body>
 </html>
