@@ -18,7 +18,6 @@
                     }else{
                         this.rear++;
                     }
-                    this.rear++;
                     this.items[this.rear] = newVal;
                     this.currentSize++;
                     if(this.front == -1){
@@ -38,7 +37,7 @@
                 }else{
                     this.front = -1;
                     this.rear = -1;
-                    alert("Queue is full")
+                    alert("Queue is empty")
                 }
             }
             display(){
