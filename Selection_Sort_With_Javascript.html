@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Selection Sorting With Javascript</title>
+    <script>
+        let data = [20,12,53,3];
+        function selectionSort(items){
+            let minId;
+            for (let i =0;i<data.length;i++){
+                minId = i;
+                for(let j = i+1  ;j<data.length;j++){ 
+                    if(data[j]<data[minId]){
+                        minId = j; 
+                    }
+                }
+                console.log(data[minId]);
+                let temp = data[minId];
+                data[minId] = data[i]; 
+                 data[i] = temp;  
+            }
+            console.warn(items);
+        }
+        selectionSort(data);
+    </script>
+</head>
+<body>
+    <h1>Selectio Sorting</h1>
+</body>
+</html>

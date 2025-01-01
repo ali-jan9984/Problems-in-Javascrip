@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Binary Search with Recursion</title>
+    <script>
+        let data = [10,15,18,34,67];
+        let start = 0;
+        let end = data.length -1;
+        let find = 34;
+        let position = undefined;
+        function binarySearch(data,start,end){
+            let mid = Math.floor((start+end)/2);
+            if(find === data[mid]){
+                position = mid;
+                return true;
+            }else if(find > data[mid]){
+                start = mid +1;
+                binarySearch(data,start,end);
+            }else{
+                end = mid -1;
+                binarySearch(data,start,end);   
+            }
+        }
+        binarySearch(data,start,end);
+        console.error(position);
+    </script>
+</head>
+<body>
+    <h1>Binary Search with Recursion</h1>
+</body>
+</html>

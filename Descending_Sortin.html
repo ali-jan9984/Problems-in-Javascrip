@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Descending Sorting</title>
+    <script>
+          let data = [20,12,53,3];
+        function selectionSort_M1(items){
+            let minId;
+            for (let i =data.length -1;i>=0;i--){
+                minId = i;
+                for(let j = i -1;j>= 0;j--){ 
+                    if(data[j]<data[minId]){
+                        minId = j;
+                    }
+                }
+                console.log(data[minId]);
+                let temp = data[minId];
+                data[minId] = data[i]; 
+                 data[i] = temp; 
+            }
+            console.warn(items);
+        }
+        selectionSort_M1(data);
+        
+        function selectionSort_M2(items){
+            let minId;
+            for (let i =0;i<data.length;i++){
+                minId = i;
+                for(let j = i+1  ;j<data.length;j++){ 
+                    if(data[j]>data[minId]){
+                        minId = j;
+                    }
+                }
+                console.log(data[minId]);
+                let temp = data[minId];
+                data[minId] = data[i]; 
+                 data[i] = temp; 
+            }
+            console.warn(items);
+        }
+        selectionSort_M2(data);
+
+
+    </script>
+</head>
+<body>
+    <h1>Descending Sorting</h1>
+</body>
+</html>

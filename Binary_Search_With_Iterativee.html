@@ -4,13 +4,22 @@
     <title>Binary Search with Iterative Approach</title>
     <script>
         let data = [5,9,13,17];
-        let find = 17;
+        let find = 5;
         let start = 0;
         let end = data.length -1;
         let position = undefined;
         while(start<=end){
-             let mid = Math.floor(start + end)
+             let mid = Math.floor((start+end)/2);
+             if(find === data[mid]){
+                position = mid;
+                break;
+             }else if(find > data[mid]){
+                start = mid +1;
+             }else{
+                end = mid -1;
+             }
         }
+        console.table(position);
     </script>
 </head>
 <body>
