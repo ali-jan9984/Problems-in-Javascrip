@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem Solving And Logic Building</title>
+    <script>
+        // function getLength(arr){
+        //     let length = 0;
+        //     return{
+        //         result: arr.filter(el=>{
+        //             if(el%2 == 0){
+        //                 length++;
+        //                 return el;
+        //             }else{
+        //                 return null;
+        //             }
+        //         }
+        //     ).map(el => el ** 2),
+        //     length
+        //     }
+        // }
+
+        // function logic_2(arr){
+        //     const result = [];
+        //     let length = 0;
+        //     arr.forEach(el => {
+        //         if(el%2 == 0){
+        //             length++;
+        //             result.push(el ** 2);
+        //         }else{
+        //             return null;
+        //         }
+        //     });
+        // }
+        // let data = [1,2,3,4,5,6,7,8,9,10];
+        // let result1 = getLength(data);
+        // let result2 =logic_2(data);
+        // console.warn(result1,result2);
+        let data = [23,4,5,67,54,68,90,100,34];
+        function getLength(items){
+            let result = [];
+            let count = 0;
+            for(let i = 0;i<items.length;i++){
+                if(items[i]%2 == 0){
+                    result.push(items[i] * 2);
+                count++;
+
+                }
+            }
+            return console.warn(result,count);
+        }
+        getLength(data)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
