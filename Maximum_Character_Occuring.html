@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Maximum Character Ocuring In String</title>
+    <script>
+        let str = "malayalam";
+        let strObj = {};
+        let maxKey = '';
+        for(let i = 0;i<str.length;i++){
+            let key = str[i];
+            if(!strObj[key]){
+                strObj[key] = 0;
+            }
+            strObj[key]++;
+            if(maxKey == "" || strObj[key]>strObj[maxKey]){
+                maxKey = key;
+            }
+        }
+        console.log(strObj,maxKey);
+    </script>
+</head>
+<body>
+    <h1>Maximum Character Ocuring in String</h1>
+</body>
+</html>
