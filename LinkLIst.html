@@ -21,10 +21,50 @@
                 this.tail = newNode;
                 this.size++;
             }
+            traversing(){
+                // console.log("function called")
+                let counter = 0;
+                let currentNode = this.head;
+                while(counter < this.size){
+                    console.log(currentNode);
+                    currentNode = currentNode.next;
+                    counter++;
+                }
+            }
+            updating( value, pos){
+                let counter = 0;
+                let currentNode = this.head;
+                while(counter <= pos){
+                    if(counter == pos -1){
+                        currentNode.value = value;
+                        break;
+                    }
+                    currentNode = currentNode.next;
+                    counter++;
+                }
+            }
+            deleteNode(index){
+                let counter = 1;
+                let leadNode = this.head;
+                if(index == 1){
+                    this.head = this.head.next;
+                }else{
+                    while(counter < index -1 ){
+                        leadNode = leadNode.next;
+                        counter++;
+                    }
+                }
+                let nextNode = leadNode.next ;
+                leadNode.next = nextNode;
+                console.warn(leadNode);
+            }
         }
         let list = new List(200);
         list.appendNode(400);
         list.appendNode(500);
+        // list.traversing();
+        // list.updating(300,1);
+        // list.deleteNode(2);
         console.log(list);
     </script>
 </head>
