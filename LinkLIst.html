@@ -58,13 +58,59 @@
                 leadNode.next = nextNode;
                 console.warn(leadNode);
             }
+            insertNode(index,value){
+                let counter = 0;
+                let currenNode = this.head;
+                while(counter<index){
+                   currenNode = currenNode.next;
+                    counter++;
+                }
+                let nextNode = currenNode.next;
+                currenNode.next = {
+                    value:value,
+                    next:nextNode
+                }
+            }
+            searchNode(data){
+                let result = undefined;
+                let leadNode = this.head;
+                let loop = true;
+                while(loop){
+                    leadNode= leadNode.next;
+                    loop = !!leadNode;
+                    if(loop && leadNode.value == data){
+                        loop = false;
+                        result = leadNode;
+                    }
+                }
+                if(result == undefined){
+                    console.log("Data not found");
+                }else{
+            console.log(result);   
+                }
+          }
+          searchNodeByElement(index){
+              let counter = 0;
+              let leadNode = this.head;
+              while(counter<index){
+                leadNode = leadNode.next;
+                if(leadNode == null){
+                    return "Index out of bound"
+                }
+                counter++;
+              }
+              console.log(leadNode);
+          }
         }
         let list = new List(200);
         list.appendNode(400);
         list.appendNode(500);
-        // list.traversing();
-        // list.updating(300,1);
-        // list.deleteNode(2);
+        list.traversing();
+        list.updating(300,1);
+        list.deleteNode(2);
+        list.insertNode(2,300);
+        list.searchNode(3000);
+        list.searchNodeByElement(3);
         console.log(list);
     </script>
 </head>
