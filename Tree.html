@@ -86,6 +86,20 @@
                     console.log(current.value)
                 }
             }
+            minVal(root){
+                if(!root.left){
+                    return root.value;
+                }else{
+                    return this.minVal(root.left)
+                }
+            }
+            maxValue(root){
+                if(!root.right){
+                    return root.value;
+                }else{
+                    return this.maxValue(root.right);
+                }
+            }
         }
         let bst = new BST();
         bst.makeTree(20);
@@ -98,7 +112,9 @@
         // bst.search(bst.root,30);
         // bst.preOrder(bst.root);
         // bst.inOrder(bst.root);
-        bst.bfsSearching();
+        // bst.bfsSearching();
+        console.log(bst.minVal(bst.root));
+        console.log(bst.maxValue(bst.root));
         // bst.postOrder(bst.root);
         let result =bst.isTreeEmpty();
         console.log(bst);
