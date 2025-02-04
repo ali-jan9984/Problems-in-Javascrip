@@ -3,21 +3,37 @@
 <head>
     <title>Insertion Sorting In Javascript</title>
     <script>
-        let data = [ 12,11,13,5,6];
-         
-        function insertionSort(items){
-            let i,current,j;
-            for(i = 1;i<items.length;i++){
-                current = items[i];
-                j = i - 1;
-                while(j >= 0 && items[j] > current){
-                    items[j+1] = items [j];
-                    j--;
-                }
-                items[j+1] = current;
-            }
+        let data = [12, 11, 13, 5, 6];
+
+function insertionSort(items) {
+    let i, current, j;
+    console.log("Initial Array:", items);
+
+    for (i = 1; i < items.length; i++) {
+        current = items[i]; // Pick the current element
+        j = i - 1;
+
+        console.log(`\nIteration ${i}: Trying to place ${current} in the sorted part of the array at index ${j}`);
+
+        // Shift elements to the right if they are greater than 'current'
+        while (j >= 0 && items[j] > current) {
+            console.log(`  ${items[j]} is greater than ${current}, shifting ${items[j]} to the right`);            items[j + 1] = items[j];
+            j--;
         }
-        insertionSort(data);
+
+        console.log(j);
+        
+        // Place 'current' in its correct position
+        items[j + 1] = current;
+        console.log("  Placed", current, "at index", j + 1);
+        console.log("  Current Array State:", items);
+    }
+
+    console.log("\nSorted Array:", items);
+}
+
+insertionSort(data);
+
     </script>
 </head>
 <body>

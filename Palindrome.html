@@ -6,15 +6,14 @@
         function checkPalindrome(data){
             let start = 0;
             let end = data.length -1 ;
-            let result = true;
             while(end>start){
                 if(data[start] !== data[end]){
-                    result = false;
+                   return false;
                 }
                 start++;
                 end--;
             }
-            return result;
+            return true;
         }
         let str = "malayalam";
         console.log(checkPalindrome(str))
